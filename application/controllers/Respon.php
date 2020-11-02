@@ -8,6 +8,8 @@ class Respon extends CI_Controller{
 
 	function index(){
 		$crud = new Grocery_CRUD_Extended();
+		 $this->load->config('grocery_crud');
+ 		$this->config->set_item('grocery_crud_xss_clean', true);
 		$crud->unset_jquery();
 		$crud->set_table('absen');
 		$crud->unset_add();
