@@ -11,21 +11,27 @@ class Respon extends CI_Controller{
 
 	function index(){
 		$crud = new Grocery_CRUD_Extended();
-		 $this->load->config('grocery_crud');
- 		$this->config->set_item('grocery_crud_xss_clean', true);
-		$crud->unset_jquery();
+		$this->load->config('grocery_crud');
+ 		//$this->config->set_item('grocery_crud_xss_clean', true);
+		// $crud->unset_jquery();
+		// $crud->unset_bootstrap();
 		$crud->set_table('absen');
 		$crud->unset_add();
 		$crud->unset_edit();
 		$crud->unset_read();
 		$crud->unset_delete();
+		$crud->where('tanggal',date('Y-m-d'));
+		// $crud->callback_column('tanggal',array($this,'_callback_tanggal'));
 		$crud->order_by('tanggal','asc');
 		$output = $crud->render();
 		$this->show('respon',$output);
 	}
 
 
-
+	public function _callback_tanggal($value,$row){
+		// $value = str_replace('/',$value,':'); 
+		return $value;
+	}
 	
 
 	public function show($page,$output=null){

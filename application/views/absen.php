@@ -5,13 +5,13 @@
             <div class="container">
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form" action="<?=base_url()?>index.php/absen/submit">
-                        <!-- <center>
+                        <center>
                             <img src="<?=base_url()?>/dist/images/logo.png" class="logo">
                             <br><br>
-                        </center> -->
+                        </center>
                         <h2 class="form-title">
                             Absen Harian 
-                            <!-- <br>Personel Pushansiber -->
+                            <br>Personel Pushansiber
                         </h2>
                      
                         <div class="alert alert-info alert-dismissible">

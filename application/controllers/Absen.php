@@ -4,10 +4,27 @@ defined('BASEPATH') or exit('no direct access allowed');
 class Absen extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		
 	}
 
+
+
 	function index(){
-		$this->show('absen');
+		if($this->checktime()){
+			$this->show('timeout');
+		}else{
+			$this->show('absen');	
+		}
+		
+	}
+
+	function checktime(){
+		$currtime = date('H:i');
+		if(strtotime($currtime)>strtotime('06:30') or strtotime($currtime)<strtotime('04:00')){
+			return false;
+		}else{
+			return false;
+		}
 	}
 
 	function sukses(){
@@ -19,6 +36,11 @@ class Absen extends CI_Controller{
 	}
 
 	function submit(){
+		if($this->checktime()){
+			$this->show('timeout');
+		}else{
+
+
 		$this->load->model('ModelAbsen');
 
 		$nama = $this->input->post('nama',true);
@@ -45,6 +67,12 @@ class Absen extends CI_Controller{
 		}else{
 			redirect('/absen/gagal');
 		}
+	  }
+	}
+
+
+	function timeout(){
+		$this->show('timeout');
 	}
 
 	function show($page,$output=null){
