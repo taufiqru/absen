@@ -4,7 +4,7 @@
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
                 <div class="signup-content">
-                    <form method="POST" id="signup-form" class="signup-form" action="<?=base_url()?>absen/submit">
+                    <form method="POST" id="signup-form" class="signup-form" action="<?=base_url()?>index.php/absen/submit">
                         <!-- <center>
                             <img src="<?=base_url()?>/dist/images/logo.png" class="logo">
                             <br><br>

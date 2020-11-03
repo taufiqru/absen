@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="<?=base_url()?>plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
-    <link rel="stylesheet" href="<?=base_url()?>dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="<?=base_url()?>dist/css/adminlte.min.css">
     <link rel="icon" href="<?=base_url()?>dist/images/favicon.ico">
     <link rel="stylesheet" href="<?=base_url()?>dist/css/skins/_all-skins.min.css">
     <!-- Main css -->

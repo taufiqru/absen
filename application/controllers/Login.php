@@ -26,9 +26,9 @@ class Login extends CI_Controller{
 		
 		if($val!=false){
 			$this->mysessioncheck->createSession($val);
-			redirect(base_url()."respon/");
+			redirect(base_url()."index.php/respon/");
 		}else{
-			 redirect(base_url()."login/index/error");
+			 redirect(base_url()."index.php/login/index/error");
 		}
 	}
 

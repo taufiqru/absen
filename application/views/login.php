@@ -105,7 +105,7 @@
     
     
 
-    <form action="<?=base_url();?>login/auth" method="post">
+    <form action="<?=base_url();?>index.php/login/auth" method="post">
       <div class="form-group has-feedback">
 
         <input type="text" class="form-control" name="username" placeholder="Username">
