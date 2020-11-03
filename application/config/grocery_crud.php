@@ -29,11 +29,11 @@
     $config['grocery_crud_paging_options'] = array('15','25','50','100');
 
     // Default theme for grocery CRUD
-    $config['grocery_crud_default_theme'] = 'flexigrid';
+    $config['grocery_crud_default_theme'] = 'datatables';
 
     // The environment is important so we can have specific configurations for specific environments
     $config['grocery_crud_environment'] = 'production';
 
     // Turn XSS clean into true in case you are exposing your CRUD into public. Please be aware that this is
     // stripping all the HTML and do not just trim the extra javascript
-    $config['grocery_crud_xss_clean'] = false;
+    $config['grocery_crud_xss_clean'] = true;

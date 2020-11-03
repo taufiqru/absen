@@ -1,10 +1,10 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <!-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8"> -->
-      <span class="brand-text font-weight-light">Database Mitra</span>
+    <a href="#" class="brand-link">
+       <img src="<?=base_url()?>dist/images/logo.png" alt="kemhan Logo" class="brand-image img-circle elevation-3"
+           style="opacity: 1"> 
+      <span class="brand-text font-weight-light">Respon Absen</span>
     </a>
 
     <!-- Sidebar -->
@@ -15,7 +15,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div> -->
         <div class="info">
-          <a href="#" class="d-block">Tim Investigasi</a>
+          <a href="#" class="d-block">Piket Jaga</a>
         </div>
       </div>
 
@@ -28,27 +28,20 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas  fa-users"></i>
               <p>
-                Mitra
-                <i class="right fas fa-angle-left"></i>
+                Respon Absensi
               </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="<?=base_url()?>mitra/table" class="nav-link">
-                  <i class="far fas fa-th-list nav-icon"></i>
-                  <p>Daftar Mitra</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url()?>mitra/add" class="nav-link">
-                  <i class="far fa-plus-square nav-icon"></i>
-                  <p>Tambah Mitra</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="<?=base_url()?>akun" class="nav-link">
+              <i class="nav-icon fas  fa-users"></i>
+              <p>
+                Akun Admin
+              </p>
+            </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="<?=base_url();?>login/logout" class="nav-link">
               <i class="far fas fa-power-off nav-icon "></i>
               <p>
                 Keluar

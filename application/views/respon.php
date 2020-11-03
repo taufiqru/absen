@@ -10,7 +10,7 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
-  <section class="content-header">
+  <section class="content-header" style="opacity:1">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -21,7 +21,7 @@
       </div><!-- /.container-fluid -->
     </section>
 
-  <section class="content">
+  <section class="content"  style="opacity:1">
   <div class="row">
     <div class="col-md-12">
       <div class="card card-primary">

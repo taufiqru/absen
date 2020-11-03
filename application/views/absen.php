@@ -5,14 +5,20 @@
             <div class="container">
                 <div class="signup-content">
                     <form method="POST" id="signup-form" class="signup-form" action="<?=base_url()?>absen/submit">
-                        <center>
+                        <!-- <center>
                             <img src="<?=base_url()?>/dist/images/logo.png" class="logo">
                             <br><br>
-                        </center>
-                        <h2 class="form-title">Absen Harian <br>Personel Pushansiber</h2>
-                        <div class="callout callout-info" >
-                        <p style="color:white">Dengan hormat, kepada seluruh personel agar mengisi formulir pada pukul 04.00 - 06.30 WIB setiap harinya.<br>
-                        Note : Kolom alamat hanya diisi jika ada perubahan alamat dr sebelumnya</p>
+                        </center> -->
+                        <h2 class="form-title">
+                            Absen Harian 
+                            <!-- <br>Personel Pushansiber -->
+                        </h2>
+                     
+                        <div class="alert alert-info alert-dismissible">
+                          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                          <h5><i class="icon fas fa-info"></i> Perhatian !</h5>
+                          Dengan hormat, kepada seluruh personel agar mengisi formulir pada pukul 04.00 - 06.30 WIB setiap harinya.<br>
+                        Note : Kolom alamat hanya diisi jika ada perubahan alamat dr sebelumnya
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-input" name="nama" id="name" placeholder="Nama Lengkap" required />
@@ -61,7 +67,7 @@
                             <input type="text" class="form-input" name="alamat" id="alamat" placeholder="Alamat WFH (Hanya diisi jika ada perubahan alamat)">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="form-submit" value="Kirim" /><br>
+                            <input type="submit" name="submit" id="submit" class="btn btn-block btn-primary btn-lg" value="SIMPAN" /><br>
                         </div>
                     </form>
                 </div>
