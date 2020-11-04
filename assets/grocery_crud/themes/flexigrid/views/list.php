@@ -7,6 +7,11 @@
 		<table cellspacing="0" cellpadding="0" border="0" id="flex1">
 		<thead>
 			<tr class='hDiv'>
+				<th width="3%">
+					 <div class="text-left field-sorting">
+					  #
+					 </div>
+				</th>
 				<?php foreach($columns as $column){?>
 				<th width='<?php echo $column_width?>%'>
 					<div class="text-left field-sorting <?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?><?php echo $order_by[1]?><?php }?>" 
@@ -27,6 +32,7 @@
 		<tbody>
 <?php foreach($list as $num_row => $row){ ?>        
 		<tr  <?php if($num_row % 2 == 1){?>class="erow"<?php }?>>
+		<td><?php echo  "<center>".($num_row + 1)."</center>";?></td>	
 			<?php foreach($columns as $column){?>
 			<td width='<?php echo $column_width?>%' class='<?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?>sorted<?php }?>'>
 				<div class='text-left'><?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;' ; ?></div>

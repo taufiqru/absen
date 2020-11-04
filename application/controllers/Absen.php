@@ -20,7 +20,7 @@ class Absen extends CI_Controller{
 
 	function checktime(){
 		$currtime = date('H:i');
-		if(strtotime($currtime)>strtotime('06:30') or strtotime($currtime)<strtotime('04:00')){
+		if(strtotime($currtime)>strtotime('07:00') or strtotime($currtime)<strtotime('04:00')){
 			return false;
 		}else{
 			return false;
@@ -50,6 +50,9 @@ class Absen extends CI_Controller{
 		$alamat = $this->input->post('alamat',true);
 		$tanggal = date('Y-m-d');
 		$waktu = date('H:i:s');
+		if($keterangan=="Lainnya"){
+			$keterangan = $this->input->post('others');
+		}
 
 		$data = array(
 			'nama' => strip_tags($nama),

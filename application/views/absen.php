@@ -17,7 +17,7 @@
                         <div class="alert alert-info alert-dismissible">
                           <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                           <h5><i class="icon fas fa-info"></i> Perhatian !</h5>
-                          Dengan hormat, kepada seluruh personel agar mengisi formulir pada pukul 04.00 - 06.30 WIB setiap harinya.<br>
+                          Dengan hormat, kepada seluruh personel agar mengisi formulir pada pukul 04.00 - 07.00 WIB setiap harinya.<br>
                         Note : Kolom alamat hanya diisi jika ada perubahan alamat dr sebelumnya
                         </div>
                         <div class="form-group">
@@ -56,6 +56,11 @@
                             </select>
 
                         </div>
+                        
+                        <div class="form-group" id="tambahan" style="display:none">
+                            <input type="text" class="form-input" name="others" id="others" placeholder="Keterangan Lainnya">
+                        </div>
+
                         <div class="form-group">
                             <select name="kondisi" id="kondisi" class="form-input" required>
                                 <option class="placeholder">--- Kondisi ---</option>
@@ -74,3 +79,18 @@
             </div>
         </section>
     </div>
+    <script>
+        $(document).ready(function(){
+
+            $('#keterangan').on('change',function(){
+                let elm = $('#keterangan').val();
+                if(elm=="Lainnya"){
+                    $('#tambahan').fadeIn();
+                }else{
+                    $('#tambahan').fadeOut();
+                }
+            });
+
+        });
+    </script>
+
