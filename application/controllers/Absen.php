@@ -4,10 +4,7 @@ defined('BASEPATH') or exit('no direct access allowed');
 class Absen extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		
 	}
-
-
 
 	function index(){
 		if($this->checktime()){
@@ -19,12 +16,41 @@ class Absen extends CI_Controller{
 	}
 
 	function checktime(){
+		
+		$status =false;
 		$currtime = date('H:i');
 		if(strtotime($currtime)>strtotime('07:00') or strtotime($currtime)<strtotime('04:00')){
-			return false;
+			$status =  true;
 		}else{
-			return false;
+			$status =  false;
 		}
+
+		$toggle = $this->statusTimer();
+		
+		if($toggle[0]['status']=="Off"){
+			$status = false;	
+		}
+
+
+		return $status;
+		
+	}
+
+	function statusTimer(){
+		$this->load->model('ModelAbsen');
+		return $this->ModelAbsen->status();
+	}
+
+	function updateStatusTimer(){
+		$this->load->model('ModelAbsen');
+		$value = $this->input->post('status');
+		$data = array( 'status' => $value);
+		$res = $this->ModelAbsen->updateStatus($data);
+		echo json_encode($res);
+	}
+
+	function getStatusTimer(){
+		echo json_encode($this->statusTimer()[0]);
 	}
 
 	function sukses(){
@@ -40,7 +66,6 @@ class Absen extends CI_Controller{
 			$this->show('timeout');
 		}else{
 
-
 		$this->load->model('ModelAbsen');
 
 		$nama = $this->input->post('nama',true);
@@ -53,7 +78,6 @@ class Absen extends CI_Controller{
 		if($keterangan=="Lainnya"){
 			$keterangan = $this->input->post('others');
 		}
-
 		$data = array(
 			'nama' => strip_tags($nama),
 			'pangkat' => $pangkat,
@@ -70,14 +94,14 @@ class Absen extends CI_Controller{
 		}else{
 			redirect('/absen/gagal');
 		}
-	  }
-	}
 
+		}
+	}
 
 	function timeout(){
 		$this->show('timeout');
 	}
-
+	
 	function show($page,$output=null){
 		$this->load->view('absenbase/header');
 		$this->load->view($page,$output);

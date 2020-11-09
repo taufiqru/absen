@@ -25,7 +25,7 @@
                         </div>
                         <div class="form-group">
                             <select name="pangkat" id="pangkat" class="form-input" required>
-                                <option class="placeholder">--- Pangkat ---</option>
+                                <option value="" class="placeholder">--- Pangkat ---</option>
                                 <option value="Brigjen TNI">Brigjen TNI</option>
                                 <option value="Kolonel">Kolonel</option>
                                 <option value="Letkol">Letkol</option>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="form-group">
                             <select name="keterangan" id="keterangan" class="form-input" required>
-                                <option class="placeholder">--- Keterangan ---</option>
+                                <option value ="" class="placeholder">--- Keterangan ---</option>
                                 <option value="Dinas Kantor">Dinas Kantor</option>
                                 <option value="Dinas Rumah">Dinas Rumah</option>
                                 <option value="Dinas Dalam/Piket">Dinas Dalam/Piket</option>
@@ -57,17 +57,22 @@
 
                         </div>
                         
-                        <div class="form-group" id="tambahan" style="display:none">
-                            <input type="text" class="form-input" name="others" id="others" placeholder="Keterangan Lainnya">
+                        <div class="form-group" id="tambahan" style="display:none" >
+                            <input type="text" class="form-input" name="others" id="others" placeholder="Keterangan Lainnya" required>
                         </div>
 
                         <div class="form-group">
                             <select name="kondisi" id="kondisi" class="form-input" required>
-                                <option class="placeholder">--- Kondisi ---</option>
+                                <option value="" class="placeholder">--- Kondisi ---</option>
                                 <option value="Aman/Sehat">Aman/Sehat</option>
                                 <option value="Sakit">Sakit</option>
                             </select>
                         </div>
+
+                        <div class="form-group" id="ketsakit" style="display:none" >
+                            <input type="text" class="form-input" name="ketsakit" id="ketsakit" placeholder="Keterangan Sakit" required>
+                        </div>
+
                         <div class="form-group">
                             <input type="text" class="form-input" name="alamat" id="alamat" placeholder="Alamat WFH (Hanya diisi jika ada perubahan alamat)">
                         </div>
@@ -91,6 +96,14 @@
                 }
             });
 
+            $('#kondisi').on('change',function(){
+                let elm = $('#kondisi').val();
+                if(elm=="Sakit"){
+                    $('#ketsakit').fadeIn();
+                }else{
+                    $('#ketsakit').fadeOut();
+                }
+            });
+
         });
     </script>
-

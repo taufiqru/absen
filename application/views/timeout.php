@@ -18,7 +18,7 @@
                   <h5>
                   <i class="icon fas fa-info"></i> 
                   Perhatian !</h5>
-                  Batas waktu pengisian absensi harian telah habis, silahkan mengisi formulir pada pukul 04.00 - 06.30 WIB.<br>
+                  Batas waktu pengisian absensi harian telah habis, silahkan mengisi formulir pada pukul 04.00 - 07.00 WIB.<br>
                 </div>
                 </div>
             </div>
