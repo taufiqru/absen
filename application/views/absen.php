@@ -38,7 +38,7 @@
                                 <option value="Penata Tk. I III/d">Penata Tk. I III/d</option>
                                 <option value="Penata III/c">Penata III/c</option>
                                 <option value="Penada Tk. I III/b">Penata Muda Tk. I III/b</option>
-                                <option value="Penada III/a">Penata Muda III/a</option>
+                                <option value="Penata Muda III/a">Penata Muda III/a</option>
                                 <option value="Pengatur II/c">Pengatur II/c</option>
                                 <option value="SDM">SDM</option>
                             </select>
