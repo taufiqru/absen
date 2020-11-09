@@ -27,6 +27,21 @@ class Respon extends CI_Controller{
 		$this->show('respon',$output);
 	}
 
+	function sup(){
+		$crud = new Grocery_CRUD_Extended();
+		$this->load->config('grocery_crud');
+ 		//$this->config->set_item('grocery_crud_xss_clean', true);
+		// $crud->unset_jquery();
+		// $crud->unset_bootstrap();
+		$crud->set_table('absen');
+		$crud->columns(['nama','pangkat','keterangan','kondisi','tanggal','waktu']);
+		
+		// $crud->callback_column('tanggal',array($this,'_callback_tanggal'));
+		$crud->order_by('tanggal','asc');
+		$output = $crud->render();
+		$this->show('respon',$output);
+	}
+
 
 	public function _callback_tanggal($value,$row){
 		// $value = str_replace('/',$value,':'); 

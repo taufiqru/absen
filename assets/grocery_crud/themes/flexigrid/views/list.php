@@ -12,6 +12,13 @@
 					  #
 					 </div>
 				</th>
+				<?php if(!$unset_delete || !$unset_edit || !$unset_read || !$unset_clone || !empty($actions)){?>
+				<th align="left" abbr="tools" axis="col1" class="" width='20%'>
+					<div class="text-right">
+						<?php echo $this->l('list_actions'); ?>
+					</div>
+				</th>
+				<?php }?>
 				<?php foreach($columns as $column){?>
 				<th width='<?php echo $column_width?>%'>
 					<div class="text-left field-sorting <?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?><?php echo $order_by[1]?><?php }?>" 
@@ -20,24 +27,13 @@
 					</div>
 				</th>
 				<?php }?>
-				<?php if(!$unset_delete || !$unset_edit || !$unset_read || !$unset_clone || !empty($actions)){?>
-				<th align="left" abbr="tools" axis="col1" class="" width='20%'>
-					<div class="text-right">
-						<?php echo $this->l('list_actions'); ?>
-					</div>
-				</th>
-				<?php }?>
+				
 			</tr>
 		</thead>		
 		<tbody>
 <?php foreach($list as $num_row => $row){ ?>        
 		<tr  <?php if($num_row % 2 == 1){?>class="erow"<?php }?>>
-		<td><?php echo  "<center>".($num_row + 1)."</center>";?></td>	
-			<?php foreach($columns as $column){?>
-			<td width='<?php echo $column_width?>%' class='<?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?>sorted<?php }?>'>
-				<div class='text-left'><?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;' ; ?></div>
-			</td>
-			<?php }?>
+		<td><?php echo  "<center>".($num_row + 1)."</center>";?></td>
 			<?php if(!$unset_delete || !$unset_edit || !$unset_read || !empty($actions)){?>
 			<td align="left" width='20%'>
 				<div class='tools'>				
@@ -72,7 +68,13 @@
                     <div class='clear'></div>
 				</div>
 			</td>
+			<?php }?>	
+			<?php foreach($columns as $column){?>
+			<td width='<?php echo $column_width?>%' class='<?php if(isset($order_by[0]) &&  $column->field_name == $order_by[0]){?>sorted<?php }?>'>
+				<div class='text-left'><?php echo $row->{$column->field_name} != '' ? $row->{$column->field_name} : '&nbsp;' ; ?></div>
+			</td>
 			<?php }?>
+			
 		</tr>
 <?php } ?>        
 		</tbody>
