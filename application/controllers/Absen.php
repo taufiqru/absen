@@ -4,6 +4,7 @@ defined('BASEPATH') or exit('no direct access allowed');
 class Absen extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		
 	}
 
 	function index(){
@@ -31,11 +32,21 @@ class Absen extends CI_Controller{
 			$status = false;	
 		}
 
-
 		return $status;
 		
 	}
 
+	function reload(){
+		if($this->checktime()){
+			$data = array('status'=> 'timeout');
+			
+		}else{
+			$data = array('status'=> 'ok');
+		}
+		echo json_encode($data);
+	}
+
+	
 	function statusTimer(){
 		$this->load->model('ModelAbsen');
 		return $this->ModelAbsen->status();

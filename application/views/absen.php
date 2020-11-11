@@ -58,7 +58,7 @@
                         </div>
                         
                         <div class="form-group" id="tambahan" style="display:none" >
-                            <input type="text" class="form-input" name="others" id="others" placeholder="Keterangan Lainnya" required>
+                            <input type="text" class="form-input" name="others" id="others" placeholder="Keterangan Lainnya">
                         </div>
 
                         <div class="form-group">
@@ -70,7 +70,7 @@
                         </div>
 
                         <div class="form-group" id="ketsakit" style="display:none" >
-                            <input type="text" class="form-input" name="ketsakit" id="ketsakit" placeholder="Keterangan Sakit" required>
+                            <input type="text" class="form-input" name="ketsakit" id="ketsakit" placeholder="Keterangan Sakit">
                         </div>
 
                         <div class="form-group">
@@ -104,6 +104,21 @@
                     $('#ketsakit').fadeOut();
                 }
             });
+
+           
+            setInterval(function(){
+                let url = "<?=base_url()?>index.php/absen/reload";
+                $.get(url,function(data){
+                    let val = JSON.parse(data);
+                    //console.log(val.status);    
+                    if(val.status=='timeout'){
+                        window.location.reload();
+                    }
+                });
+                
+            },1000); 
+
+            
 
         });
     </script>

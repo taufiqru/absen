@@ -29,9 +29,17 @@
     <link rel="manifest" href="<?=base_url()?>manifest.json">
     <script>
         //if browser support service worker
-        if('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('sw.js');
-        };
+        if ('serviceWorker' in navigator) {
+      caches.keys().then(function(cacheNames) {
+        cacheNames.forEach(function(cacheName) {
+          caches.delete(cacheName);
+        });
+      });
+    }
+        // if('serviceWorker' in navigator) {
+        //   navigator.serviceWorker.register('sw.js');
+        // };
+        self.caches.keys().then(keys => { keys.forEach(key => console.log(key)) })
       </script>
     <!-- Font Icon -->
     <link rel="stylesheet" href="<?=base_url()?>dist/fonts/material-icon/css/material-design-iconic-font.min.css">

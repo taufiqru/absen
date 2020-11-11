@@ -24,3 +24,16 @@
             </div>
         </section>
     </div>
+    <script type="text/javascript">
+      setInterval(function(){
+                let url = "<?=base_url()?>index.php/absen/reload";
+                $.get(url,function(data){
+                    let val = JSON.parse(data);
+                    //console.log(val.status);    
+                    if(val.status=='ok'){
+                        window.location.reload();
+                    }
+                });
+                
+            },1000); 
+    </script>
