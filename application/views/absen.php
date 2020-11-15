@@ -50,8 +50,8 @@
                                 <option value="Dinas Rumah">Dinas Rumah</option>
                                 <option value="Dinas Dalam/Piket">Dinas Dalam/Piket</option>
                                 <option value="Dinas Luar">Dinas Luar</option>
-                                <option value="Dinas DN">Dinas DN</option>
-                                <option value="Dinas LN">Dinas LN</option>
+                                <option value="Pendidikan DN">Dik DN</option>
+                                <option value="Pendidikan LN">Dik LN</option>
                                 <option value="Lainnya">Lainnya</option>
                             </select>
 

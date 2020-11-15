@@ -89,6 +89,11 @@ class Absen extends CI_Controller{
 		if($keterangan=="Lainnya"){
 			$keterangan = $this->input->post('others');
 		}
+		if($kondisi=="Sakit"){
+			$ketsakit = $this->input->post('ketsakit');
+
+			$kondisi = $kondisi.": ".$ketsakit;
+		}
 		$data = array(
 			'nama' => strip_tags($nama),
 			'pangkat' => $pangkat,
