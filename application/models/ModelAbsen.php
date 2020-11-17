@@ -15,6 +15,7 @@ class ModelAbsen extends CI_Model{
 
 	function checkDuplicate($data){
 		$this->db->where('nama',$data['nama']);
+		$this->db->where('tanggal',date('Y-m-d'));
 		$result = $this->db->get('absen')->result_array();
 		return count($result);
 
