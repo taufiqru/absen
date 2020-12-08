@@ -158,6 +158,17 @@ class Absen extends CI_Controller{
 		}
 
 	}
+
+	function getPersonil(){
+		$this->load->model('ModelAbsen');
+		$search = $this->input->get('term');
+		$res = $this->ModelAbsen->getNamaPersonil($search);
+		$data = array();
+		for($i=0;$i<count($res);$i++){
+			$data[$i] = $res[$i]["nama"];
+		}
+		echo json_encode($data);
+	}
 	
 	function show($page,$output=null){
 		$this->load->view('absenbase/header');

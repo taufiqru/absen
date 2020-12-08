@@ -35,5 +35,11 @@ class ModelAbsen extends CI_Model{
 		$this->db->where('tanggal',date('Y-m-d'));
 		return $this->db->get('absen')->result();
 	}
+
+	function getNamaPersonil($search){
+		$val = $this->db->query("select nama FROM personil where nama LIKE '%".$search."%' ORDER BY nama");
+		return $val->result_array();
+
+	}
 }
 ?>
