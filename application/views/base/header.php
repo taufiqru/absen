@@ -13,6 +13,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="icon" href="<?=base_url()?>/dist/images/favicon.ico">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<?=base_url()?>plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>plugins/pace-progress/themes/red/pace-theme-loading-bar.css">
+
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=base_url()?>dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -27,6 +29,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- AdminLTE App -->
   <script src="<?=base_url()?>dist/js/adminlte.min.js"></script>
   <script src="<?=base_url()?>dist/js/notify.js"></script>
+  <script src="<?=base_url()?>plugins/pace-progress/pace.min.js"></script>
+
   <script>
     $.notifyDefaults({
       newest_on_top:true,

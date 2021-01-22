@@ -25,7 +25,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="<?=base_url()?>index.php/respon" class="nav-link">
               <i class="nav-icon fas  fa-users"></i>
               <p>
                 Respon Absensi
@@ -33,7 +33,23 @@
             </a>
           </li>
           <li class="nav-item has-treeview">
-            <a href="<?=base_url()?>akun" class="nav-link">
+            <a href="<?=base_url()?>index.php/respon/laporan" class="nav-link">
+              <i class="nav-icon fas  fa-users"></i>
+              <p>
+                Laporan Absensi
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="<?=base_url()?>index.php/respon/laporan_ropeg" class="nav-link">
+              <i class="nav-icon fas  fa-users"></i>
+              <p>
+                Laporan Absensi Ropeg
+              </p>
+            </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="<?=base_url()?>index.php/akun" class="nav-link">
               <i class="nav-icon fas  fa-users"></i>
               <p>
                 Akun Admin
@@ -41,7 +57,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=base_url();?>login/logout" class="nav-link">
+            <a href="<?=base_url();?>index.php/login/logout" class="nav-link">
               <i class="far fas fa-power-off nav-icon "></i>
               <p>
                 Keluar

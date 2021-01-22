@@ -41,5 +41,9 @@ class ModelAbsen extends CI_Model{
 		return $val->result_array();
 
 	}
+
+	function getNIP(){
+		return $this->db->get('anggota')->result_array();
+	}
 }
 ?>
