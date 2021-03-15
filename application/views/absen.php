@@ -121,10 +121,10 @@
             
             let datapersonil;
             var url = "<?=base_url()?>index.php/absen/getpersonil"
-            $.get(url,function(data){
-                datapersonil = JSON.parse(data);
+            // $.get(url,function(data){
+            //     datapersonil = JSON.parse(data);
                 
-            })
+            // })
 
             $("#name").autocomplete({
                 source:url,

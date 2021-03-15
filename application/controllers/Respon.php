@@ -109,32 +109,36 @@ class Respon extends CI_Controller{
 	
 	function absenropeg(){
 		$this->load->Model('ModelAbsen');
-		$nip= $this->ModelAbsen->getNIP();
+		$personil= $this->ModelAbsen->getNIP();
 
 		$data = array();
 
-		foreach($nip as $val){
-		    $absen = json_decode($this->curl_request($val['nip']),TRUE); 
+		foreach($personil as $val){
+			if($val['nip_nrp']!=''){
+				$absen = json_decode($this->curl_request($val['nip_nrp']),TRUE); 
 		  
-		    foreach($absen as $rows){
+			    foreach($absen as $rows){
+			      $date=date('Y-m-d');	
+			      if($rows['tanggal'] == $date && $rows['riwayat']=='Masuk' ){
+			        
+			        $imageData = base64_encode($this->imgRequest($val['nip_nrp']));
+			        
+			        $temp = array(
+			        	'foto' => $imageData,
+			        	'NIP' => $rows['nip'],
+			        	'Nama'=> $val['nama'],
+			        	'Jam' => $rows['jam'],
+			        	'Status' => $rows['absensi'],
+			        	'Kondisi' => $rows['kondisi'],
+			        	'Lokasi' => $rows['lokasi'] 
+			        );
 
-		      if($rows['tanggal'] == '2021-01-22' && $rows['riwayat']=='Masuk' ){
-		        
-		        $imageData = base64_encode($this->imgRequest($val['nip']));
-		        
-		        $val = array(
-		        	// 'foto' => $imageData,
-		        	'nip' => $rows['nip'],
-		        	'jam' => $rows['jam'],
-		        	'status' => $rows['absensi'],
-		        	'kondisi' => $rows['kondisi'],
-		        	'lokasi' => $rows['lokasi'] 
-		        );
-
-		        //echo '<img src="data:image/jpeg;base64,'.$imageData.'"  style="max-width:70px;max-height:100px"><br>';
-		        array_push($data,$val);
-		      }
-		    }
+			        //echo '<img src="data:image/jpeg;base64,'.$imageData.'"  style="max-width:70px;max-height:100px"><br>';
+			        array_push($data,$temp);
+			      }
+			    }	
+			}
+		    
 		 }
 		echo json_encode($data);
 	}

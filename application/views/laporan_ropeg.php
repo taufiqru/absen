@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="<?=base_url()?>plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+
+<script src="<?=base_url()?>plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?=base_url()?>plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
@@ -26,9 +32,43 @@
           <div class="row">
           
             <div class="col-md-12">
-              <pre id="data"></pre>
+<!--               <?php
+// echo 'Curl: ', function_exists('curl_version') ? 'Enabled' . "\xA" : 'Disabled' . "\xA";
+?> -->
+
+
+              <div id="jsGrid">
+                <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>NIP</th>
+                  <th>Jam</th>
+                  <th>Status</th>
+                  <th>Kondisi</th>
+                  <th>Lokasi</th>
+                </tr>
+                </thead>
+                <tbody>
+               
+                
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Foto</th>
+                  <th>NIP</th>
+                  <th>Jam</th>
+                  <th>Status</th>
+                  <th>Kondisi</th>
+                  <th>Lokasi</th>
+                </tr>
+                </tfoot>
+              </table>
             </div>
-            
+            <!-- /.card-body -->
+          </div>
+          
+            <pre id="data"></pre>
           </div>
         </div>
         <!-- /.card-body -->
@@ -43,18 +83,32 @@
 <script>
   $(document).ready(function(){
     
+
     Pace.track(function(){
       
-      $('#data').html('Loading Data ...');
+      $('#data').html('Mengambil Data Absen Ropeg Tanggal <?=date("d-m-Y")?> ...');
       $url= "<?=base_url();?>index.php/respon/absenropeg";
       $.get($url,function(data){
-        $('#data').html(JSON.stringify(data,undefined, 2));
-        
+        //$('#data').html(JSON.stringify(data,undefined, 2));
+        //console.log(data);
+        var table = $("#example2 tbody");
+        table.empty();
+        $.each(data, function (a, b) {
+                table.append("<tr><td><img src='data:image/jpeg;base64,"+b.foto+"'  style='max-width:70px;max-height:100px'></td>"+
+                    "<td>"+b.Nama+"<br>("+ b.NIP + ")</td>" +
+                    "<td>" + b.Jam + "</td>" +
+                    "<td>" + b.Status + "</td>" +
+                    "<td>" + b.Kondisi + "</td>" +
+                    "<td>" + b.Lokasi + "</td></tr>");
+            });
       },"json")
         .done(function(){
-          //$('#data').html('selesai!');
+          $("#example2").DataTable();
+          $('#data').html('');
         });
-    });
+        
 
+    
+    });
   });
 </script>
