@@ -20,6 +20,8 @@ class Akun extends CI_Controller{
 		$this->show('admin',$output);
 	}
 
+	
+
 	function encrypt_password_callback($post_array){
 		$options = ['cost'=>12];
 		$post_array['password'] = password_hash($post_array['password'],PASSWORD_DEFAULT,$options);

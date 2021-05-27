@@ -79,7 +79,7 @@ class Respon extends CI_Controller{
           echo 'Error:' . curl_error($ch);
       }
       curl_close($ch); 
-
+      echo $result;
       return $result; 
     }
 
@@ -104,6 +104,7 @@ class Respon extends CI_Controller{
 	      echo 'Error:' . curl_error($ch);
 	  }
 	  curl_close($ch); 
+	  echo $result;
 	  return $result; 
 	}
 	

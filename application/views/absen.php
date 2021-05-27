@@ -77,59 +77,11 @@
                             <input type="text" class="form-input" name="alamat" id="alamat" placeholder="Alamat WFH (Hanya diisi jika ada perubahan alamat)">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="submit" id="submit" class="btn btn-block btn-primary btn-lg" value="SIMPAN" /><br>
+                            <input type="submit" name="btnsubmit" id="btnsubmit" class="btn btn-block btn-primary btn-lg" value="SIMPAN" /><br>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
     </div>
-    <script>
-        $(document).ready(function(){
-
-            $('#keterangan').on('change',function(){
-                let elm = $('#keterangan').val();
-                if(elm=="Lainnya"){
-                    $('#tambahan').fadeIn();
-                }else{
-                    $('#tambahan').fadeOut();
-                }
-            });
-
-            $('#kondisi').on('change',function(){
-                let elm = $('#kondisi').val();
-                if(elm=="Sakit"){
-                    $('#ketsakit').fadeIn();
-                }else{
-                    $('#ketsakit').fadeOut();
-                }
-            });
-
-           
-            setInterval(function(){
-                let url = "<?=base_url()?>index.php/absen/reload";
-                $.get(url,function(data){
-                    let val = JSON.parse(data);
-                    //console.log(val.status);    
-                    if(val.status=='timeout'){
-                        window.location.reload();
-                    }
-                });
-                
-            },1000); 
-
-            
-            let datapersonil;
-            var url = "<?=base_url()?>index.php/absen/getpersonil"
-            // $.get(url,function(data){
-            //     datapersonil = JSON.parse(data);
-                
-            // })
-
-            $("#name").autocomplete({
-                source:url,
-                minLength: 3,
-            });
-
-        });
-    </script>
+    <script src="<?=base_url()?>dist/js/absen.min.js"></script>

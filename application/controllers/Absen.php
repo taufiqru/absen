@@ -170,6 +170,13 @@ class Absen extends CI_Controller{
 		echo json_encode($data);
 	}
 	
+	function sukseskapus(){
+		$this->show('sukses_kapus');
+	}
+	function gagalkapus(){
+		$this->show('gagal_kapus');
+	}
+	
 	function show($page,$output=null){
 		$this->load->view('absenbase/header');
 		$this->load->view($page,$output);
